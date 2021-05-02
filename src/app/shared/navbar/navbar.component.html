@@ -1,13 +1,13 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <a class="navbar-brand" [routerLink]="['/welcome']">
     <img
-      src="https://getbootstrap.com/docs/4.6/assets/brand/bootstrap-solid.svg"
+      src="../../../favicon.ico"
       width="30"
       height="30"
       class="d-inline-block align-top mr-2"
       alt="Logo"
     />
-    Simulacro PP Rodi Yago
+    Rodi Yago
   </a>
   <button
     class="navbar-toggler"
@@ -26,7 +26,13 @@
           [routerLink]="['search-movie']"
           routerLinkActive="active"
         >
-          Búsqueda películas
+          CRUD Películas
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['actors']" routerLinkActive="active">
+          CRUD Actores
         </a>
       </li>
     </ul>
