@@ -1,13 +1,4 @@
 {
-  "targets": {
-    "simulacro-pp-lab4-eaf32": {
-      "hosting": {
-        "simulacro-primer-parcial": [
-          "simulacro-pp-lab4-eaf32"
-        ]
-      }
-    }
-  },
   "projects": {
     "default": "simulacro-pp-lab4-eaf32"
   }
