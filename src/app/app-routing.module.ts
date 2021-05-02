@@ -4,6 +4,7 @@ import { SearchMovieComponent } from './pages/search-movie/search-movie.componen
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 
 const routes: Routes = [
+  { path: '', component: WelcomeComponent },
   { path: 'welcome', component: WelcomeComponent },
   { path: 'search-movie', component: SearchMovieComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'welcome' },
