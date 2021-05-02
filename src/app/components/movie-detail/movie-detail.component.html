@@ -1,0 +1,20 @@
+<h2>{{ this.title }}</h2>
+
+<div>
+  <div *ngIf="!this.movieToShow">No hay una película seleccionada!</div>
+
+  <div *ngIf="this.movieToShow">
+    <p>ID: {{ this.movieToShow?.id }}</p>
+    <p>Nombre: {{ this.movieToShow?.name }}</p>
+    <p>Tipo:{{ this.movieToShow?.type }}</p>
+    <p>Fecha de estreno: {{ this.movieToShow?.releaseDate }}</p>
+    <p>Cantidad de público: {{ this.movieToShow?.amountPublic }}</p>
+    <p>Foto de película:</p>
+    <img
+      [src]="this.movieToShow?.image"
+      [alt]="this.movieToShow?.alt"
+      width="300px"
+      alt="40"
+    />
+  </div>
+</div>

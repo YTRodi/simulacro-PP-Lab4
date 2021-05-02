@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SearchMovieComponent } from './pages/search-movie/search-movie.component';
+import { WelcomeComponent } from './pages/welcome/welcome.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'welcome', component: WelcomeComponent },
+  { path: 'search-movie', component: SearchMovieComponent },
+  { path: '**', pathMatch: 'full', redirectTo: 'welcome' },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

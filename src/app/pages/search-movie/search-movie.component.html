@@ -1,0 +1,23 @@
+<main role="main">
+  <!-- Jumbotron -->
+  <app-movie-table
+    [movieList]="this.movieList"
+    (eventSelectedMovie)="this.loadSelectedMovie($event)"
+  ></app-movie-table>
+
+  <!-- Cards -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <app-create-movie></app-create-movie>
+      </div>
+
+      <div class="col-md-6">
+        <app-movie-detail [movieToShow]="this.selectedMovie">
+        </app-movie-detail>
+      </div>
+    </div>
+
+    <hr />
+  </div>
+</main>

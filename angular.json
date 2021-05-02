@@ -120,6 +120,10 @@
               "devServerTarget": "simulacro-primer-parcial:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }
