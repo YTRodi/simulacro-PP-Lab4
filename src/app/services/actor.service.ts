@@ -16,7 +16,7 @@ export class ActorService {
   private nameCollectionDB = 'actores';
 
   constructor(private afs: AngularFirestore) {
-    this.actoresCollection = afs.collection<any>(this.nameCollectionDB);
+    this.actoresCollection = afs.collection<Actor>(this.nameCollectionDB);
   }
 
   public getAllActores(): Observable<Actor[]> {
@@ -35,7 +35,7 @@ export class ActorService {
       );
   }
 
-  public addActor(actor: any) {
+  public addActor(actor: Actor) {
     return this.actoresCollection.add(actor);
   }
 }

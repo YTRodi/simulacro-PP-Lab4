@@ -10,17 +10,22 @@ import { ActorService } from 'src/app/services/actor.service';
 })
 export class ActorsComponent implements OnInit {
   public actorsList: Actor[] | null = null;
+  public selectedActor: Actor | null = null;
   public selectedCountry: Country | null = null;
 
   constructor(private actorsService: ActorService) {
     this.actorsService.getAllActores().subscribe((actorsList) => {
       this.actorsList = actorsList;
 
-      console.log(this.actorsList);
+      console.log(this.actorsList[0]);
     });
   }
 
   ngOnInit(): void {}
+
+  loadSelectedActor(selectedActor: Actor) {
+    this.selectedActor = selectedActor;
+  }
 
   loadSelectedCountry(selectedCountry: Country) {
     this.selectedCountry = selectedCountry;

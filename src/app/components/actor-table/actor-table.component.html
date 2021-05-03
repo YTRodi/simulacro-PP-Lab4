@@ -1,0 +1,30 @@
+<app-spinner [isLoading]="!this.actorsList"></app-spinner>
+
+<div class="table-responsive table-scroll" *ngIf="this.actorsList">
+  <table class="table table-dark table-hover text-center">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre y apellido</th>
+        <th>Edad</th>
+        <th>Email</th>
+        <th>Pais Natal</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr
+        *ngFor="let actor of this.actorsList"
+        (click)="this.selectActor(actor)"
+      >
+        <td>{{ actor.id }}</td>
+        <td>{{ actor.name }} {{ actor.lastName }}</td>
+        <td>{{ actor.age }}</td>
+        <td>{{ actor.email }}</td>
+        <td>
+          <img [src]="actor.nacionality.flag" alt="country image" width="30" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

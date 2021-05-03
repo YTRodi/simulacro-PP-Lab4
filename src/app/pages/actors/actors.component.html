@@ -6,29 +6,13 @@
         src="../../../favicon.ico"
         alt="icon actores"
       />
-      <h2>Actores</h2>
-      <app-spinner [isLoading]="!this.actorsList"></app-spinner>
 
-      <!-- <table class="table table-striped" *ngIf="actorsList"> -->
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>CABECERAS</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- <tr *ngFor="let actor of this.actorsList">
-            <td>{{ actor.apellido }}</td>
-            <td>{{ actor.countryName }}</td>
-            <td>{{ actor.edad }}</td>
-            <td>{{ actor.email }}</td>
-            <td>
-              <img [src]="actor.flagImage" alt="country image" width="30" />
-            </td>
-            <td>{{ actor.nombre }}</td>
-          </tr> -->
-        </tbody>
-      </table>
+      <h2>Actores</h2>
+
+      <app-actor-table
+        [actorsList]="this.actorsList"
+        (eventSelectedActor)="this.loadSelectedActor($event)"
+      ></app-actor-table>
     </div>
 
     <div class="row g-5">
@@ -39,6 +23,7 @@
       </div>
       <div class="col-md-7 col-lg-8">
         <app-create-actor
+          [selectedActor]="this.selectedActor"
           [selectedCountry]="this.selectedCountry"
         ></app-create-actor>
       </div>

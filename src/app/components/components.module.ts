@@ -8,6 +8,7 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { CreateMovieComponent } from './create-movie/create-movie.component';
 import { CountryTableComponent } from './country-table/country-table.component';
 import { CreateActorComponent } from './create-actor/create-actor.component';
+import { ActorTableComponent } from './actor-table/actor-table.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CreateActorComponent } from './create-actor/create-actor.component';
     CountryTableComponent,
 
     CreateActorComponent,
+    ActorTableComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, SharedModule],
   exports: [
@@ -25,6 +27,7 @@ import { CreateActorComponent } from './create-actor/create-actor.component';
     CreateMovieComponent,
     CountryTableComponent,
     CreateActorComponent,
+    ActorTableComponent,
   ],
 })
 export class ComponentsModule {}

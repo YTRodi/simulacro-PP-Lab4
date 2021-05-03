@@ -4,10 +4,10 @@
 
     <app-spinner [isLoading]="!this.movieList"></app-spinner>
 
-    <div class="table-responsive table-scroll" *ngIf="this.movieList">
-      <table class="table table-dark table-hover">
+    <div class="table-scroll table-responsive" *ngIf="this.movieList">
+      <table class="table table-dark table-hover text-center">
         <thead>
-          <tr class="text-center">
+          <tr>
             <th>ID</th>
             <th>Nombre</th>
             <th>Tipo</th>
@@ -18,11 +18,7 @@
         </thead>
 
         <tbody>
-          <tr
-            class="text-center"
-            *ngFor="let movie of this.movieList"
-            (click)="selectMovie(movie)"
-          >
+          <tr *ngFor="let movie of this.movieList" (click)="selectMovie(movie)">
             <td>{{ movie.id }}</td>
             <td>{{ movie.name }}</td>
             <td>{{ movie.type }}</td>

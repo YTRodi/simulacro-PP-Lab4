@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { ActorService } from 'src/app/services/actor.service';
+import { Actor } from 'src/app/interfaces/actor';
 import { Country } from 'src/app/interfaces/country';
 
 @Component({
@@ -14,6 +15,11 @@ import { Country } from 'src/app/interfaces/country';
   styleUrls: ['./create-actor.component.css'],
 })
 export class CreateActorComponent implements OnInit {
+  //! Lo traigo acá para modificar...
+  //! Lo traigo acá para modificar...
+  //! Lo traigo acá para modificar...
+  //! Lo traigo acá para modificar...
+  @Input() selectedActor: Actor | null = null;
   @Input() selectedCountry: Country | null = null;
   public title: string = 'Alta de película | Modifcar ';
 
@@ -23,7 +29,7 @@ export class CreateActorComponent implements OnInit {
     this.formActor = this.fb.group({
       name: new FormControl('', [Validators.required]),
       lastName: new FormControl('', [Validators.required]),
-      age: new FormControl('', [
+      age: new FormControl(18, [
         Validators.required,
         Validators.min(18),
         Validators.max(99),
@@ -35,19 +41,12 @@ export class CreateActorComponent implements OnInit {
   ngOnInit(): void {}
 
   sendForm() {
-    console.log(this.formActor.getRawValue());
-    // const { name: countryName, flag: flagImage } = this.selectedCountry;
-    // const { nombre, apellido, edad, email } = this.formActor.value;
-    // const newActor = {
-    //   nombre,
-    //   apellido,
-    //   edad,
-    //   email,
-    //   countryName,
-    //   flagImage,
-    // };
-    // this.formActor.reset();
-    // this.paisSeleccionado = null;
-    // this.actorService.addActor(newActor);
+    this.actorService.addActor(<Actor>{
+      ...this.formActor.getRawValue(),
+      nacionality: this.selectedCountry,
+    });
+
+    this.selectedCountry = null;
+    this.formActor.reset();
   }
 }
