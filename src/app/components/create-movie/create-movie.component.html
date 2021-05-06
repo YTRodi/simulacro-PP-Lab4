@@ -156,7 +156,7 @@
   <button
     type="submit"
     class="btn btn-primary btn-block"
-    [disabled]="!this.formMovie.invalid && !this.selectedActor"
+    [disabled]="this.formMovie.invalid || !this.selectedActor"
   >
     Crear
   </button>

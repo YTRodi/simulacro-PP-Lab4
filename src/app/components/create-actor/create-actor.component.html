@@ -121,7 +121,7 @@
   <button
     class="my-4 w-100 btn btn-primary btn-lg"
     type="submit"
-    [disabled]="!formActor.invalid && !this.selectedCountry"
+    [disabled]="formActor.invalid || !this.selectedCountry"
   >
     Crear
   </button>

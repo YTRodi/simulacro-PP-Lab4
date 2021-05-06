@@ -1,6 +1,7 @@
 // https://app.quicktype.io/
 
 export interface Country {
+  id?: string;
   name: string;
   topLevelDomain: string[];
   alpha2Code: string;

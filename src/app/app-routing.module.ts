@@ -4,6 +4,7 @@ import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { SearchMovieComponent } from './pages/search-movie/search-movie.component';
 import { ActorsComponent } from './pages/actors/actors.component';
 import { MoviesComponent } from './pages/movies/movies.component';
+import { ActorMovieComponent } from './pages/actor-movie/actor-movie.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
@@ -11,6 +12,10 @@ const routes: Routes = [
   { path: 'busqueda-peliculas', component: SearchMovieComponent },
   { path: 'alta-actores', component: ActorsComponent },
   { path: 'alta-peliculas', component: MoviesComponent },
+  {
+    path: 'actor',
+    children: [{ path: 'actor-pelicula', component: ActorMovieComponent }],
+  },
   { path: '**', pathMatch: 'full', redirectTo: 'bienvenidos' },
 ];
 
