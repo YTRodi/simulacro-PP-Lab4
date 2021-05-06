@@ -1,3 +1,5 @@
+import { Actor } from './actor';
+
 export interface Movie {
   id?: string;
   name: string;
@@ -5,4 +7,5 @@ export interface Movie {
   releaseDate: Date;
   amountPublic: number;
   image: string;
+  actor: Actor;
 }
