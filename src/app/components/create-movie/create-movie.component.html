@@ -114,10 +114,49 @@
     </small>
   </div>
 
+  <div class="form-group text-center">
+    <img
+      *ngIf="this.formMovie.get('image')?.value !== ''"
+      [src]="this.formMovie.get('image')?.value"
+      alt="Url invalid"
+      width="300px"
+    />
+  </div>
+
+  <hr />
+
+  <div class="form-group">
+    <label class="form-label">Actor (Elija de la lista)</label>
+
+    <div class="row" *ngIf="this.selectedActor">
+      <div class="col">
+        <label class="form-label">Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          disabled
+          placeholder="Nombre del actor"
+          [value]="this.selectedActor?.name"
+        />
+      </div>
+
+      <div class="col">
+        <label class="form-label">Apellido</label>
+        <input
+          type="text"
+          class="form-control"
+          disabled
+          placeholder="Apellido del actor"
+          [value]="this.selectedActor?.lastName"
+        />
+      </div>
+    </div>
+  </div>
+
   <button
     type="submit"
     class="btn btn-primary btn-block"
-    [disabled]="this.formMovie.invalid"
+    [disabled]="!this.formMovie.invalid && !this.selectedActor"
   >
     Crear
   </button>

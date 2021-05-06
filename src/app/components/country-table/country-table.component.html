@@ -5,14 +5,9 @@
   </span>
 </h4>
 
-<div
-  class="d-flex justify-content-center pb-3"
-  *ngIf="this.countriesList?.length === 0"
->
-  <div class="spinner-border" role="status"></div>
-</div>
+<app-spinner [isLoading]="!this.countriesList"></app-spinner>
 
-<ul class="list-group mb-3 overflow-auto" style="height: 350px">
+<ul class="list-group mb-3 overflow-auto" style="height: 391px">
   <li
     style="cursor: pointer"
     class="list-group-item d-flex justify-content-between lh-sm"

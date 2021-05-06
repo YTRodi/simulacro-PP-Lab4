@@ -16,8 +16,6 @@ export class ActorsComponent implements OnInit {
   constructor(private actorsService: ActorService) {
     this.actorsService.getAllActores().subscribe((actorsList) => {
       this.actorsList = actorsList;
-
-      console.log(this.actorsList[0]);
     });
   }
 

@@ -1,30 +1,29 @@
+<h4 class="d-flex justify-content-between align-items-center mb-3">
+  <span class="text-primary">Listado de actores</span>
+  <span class="badge bg-primary rounded-pill">
+    {{ this.actorsList?.length }}
+  </span>
+</h4>
+
 <app-spinner [isLoading]="!this.actorsList"></app-spinner>
 
-<div class="table-responsive table-scroll" *ngIf="this.actorsList">
-  <table class="table table-dark table-hover text-center">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Nombre y apellido</th>
-        <th>Edad</th>
-        <th>Email</th>
-        <th>Pais Natal</th>
-      </tr>
-    </thead>
+<ul class="list-group mb-3 overflow-auto" style="height: 391px">
+  <li
+    style="cursor: pointer"
+    class="list-group-item d-flex justify-content-between lh-sm"
+    *ngFor="let actor of this.actorsList"
+    (click)="selectActor(actor)"
+  >
+    <div>
+      <h6 class="my-0">{{ actor.name }} {{ actor.lastName }}</h6>
+      <small class="text-muted">{{ actor.age }} años</small>
+    </div>
 
-    <tbody>
-      <tr
-        *ngFor="let actor of this.actorsList"
-        (click)="this.selectActor(actor)"
-      >
-        <td>{{ actor.id }}</td>
-        <td>{{ actor.name }} {{ actor.lastName }}</td>
-        <td>{{ actor.age }}</td>
-        <td>{{ actor.email }}</td>
-        <td>
-          <img [src]="actor.nacionality.flag" alt="country image" width="30" />
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+    <img
+      [src]="actor.nacionality.flag"
+      alt="bandera del pais"
+      width="60px"
+      height="40px"
+    />
+  </li>
+</ul>

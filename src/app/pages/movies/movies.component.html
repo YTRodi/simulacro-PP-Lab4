@@ -17,16 +17,16 @@
 
     <div class="row g-5 mt-5">
       <div class="col-md-5 col-lg-4 order-md-last">
-        <app-country-table
-          (eventSelectedCountry)="this.loadSelectedCountry($event)"
-        ></app-country-table>
+        <app-actor-table
+          [actorsList]="this.actorsList"
+          (eventSelectedActor)="this.loadSelectedActor($event)"
+        ></app-actor-table>
       </div>
 
       <div class="col-md-7 col-lg-8">
-        <app-create-actor
+        <app-create-movie
           [selectedActor]="this.selectedActor"
-          [selectedCountry]="this.selectedCountry"
-        ></app-create-actor>
+        ></app-create-movie>
       </div>
     </div>
   </main>

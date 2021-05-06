@@ -5,5 +5,4 @@ export interface Movie {
   releaseDate: Date;
   amountPublic: number;
   image: string;
-  alt: 'Movie image';
 }

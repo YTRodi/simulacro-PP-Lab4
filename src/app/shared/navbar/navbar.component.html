@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <a class="navbar-brand" [routerLink]="['/welcome']">
+  <a class="navbar-brand" [routerLink]="['bienvenidos']">
     <img
       src="../../../favicon.ico"
       width="30"
@@ -23,16 +23,30 @@
       <li class="nav-item">
         <a
           class="nav-link"
-          [routerLink]="['search-movie']"
+          [routerLink]="['busqueda-peliculas']"
           routerLinkActive="active"
         >
-          CRUD Películas
+          Películas
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['actors']" routerLinkActive="active">
-          CRUD Actores
+        <a
+          class="nav-link"
+          [routerLink]="['alta-actores']"
+          routerLinkActive="active"
+        >
+          Alta de Actores
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [routerLink]="['alta-peliculas']"
+          routerLinkActive="active"
+        >
+          Alta de Películas
         </a>
       </li>
     </ul>

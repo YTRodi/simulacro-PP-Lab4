@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 import {
   FormBuilder,
   FormGroup,
@@ -15,13 +16,10 @@ import { Country } from 'src/app/interfaces/country';
   styleUrls: ['./create-actor.component.css'],
 })
 export class CreateActorComponent implements OnInit {
-  //! Lo traigo acá para modificar...
-  //! Lo traigo acá para modificar...
-  //! Lo traigo acá para modificar...
-  //! Lo traigo acá para modificar...
+  //! Lo traigo acá por si en algún momento lo tengo que modificar o algo en el form...
   @Input() selectedActor: Actor | null = null;
   @Input() selectedCountry: Country | null = null;
-  public title: string = 'Alta de película | Modifcar ';
+  public title: string = 'Alta de actor';
 
   public formActor: FormGroup;
 
@@ -48,5 +46,7 @@ export class CreateActorComponent implements OnInit {
 
     this.selectedCountry = null;
     this.formActor.reset();
+
+    Swal.fire('Alta exitosa', 'Se a agregado el actor la listaa', 'success');
   }
 }
